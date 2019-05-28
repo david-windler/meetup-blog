@@ -31,7 +31,8 @@ exports.createPages = ({ actions: { createPage }, graphql }) => {
        context: {
          // In your blog post template's graphql query, you can use slug
          // as a GraphQL variable to query for data from the markdown file.
-         slug: node.frontmatter.path,
+		 slug: node.frontmatter.path,
+		 allPosts: result.data.allMarkdownRemark.edges,
        },
      })
    })
